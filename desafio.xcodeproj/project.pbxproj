@@ -23,6 +23,10 @@
 		6C58CCA32625FF0D001F7524 /* desafioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C58CCA22625FF0D001F7524 /* desafioUITests.swift */; };
 		6C58CCBD26260262001F7524 /* AdListViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C58CCBC26260262001F7524 /* AdListViewLayout.swift */; };
 		6C58CCD226261245001F7524 /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C58CCD126261245001F7524 /* Ad.swift */; };
+		77B2675326878DED00B078B2 /* ONetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B2674C26878DA400B078B2 /* ONetwork.framework */; };
+		77B2675426878DED00B078B2 /* ONetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 77B2674C26878DA400B078B2 /* ONetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		77B2679326878F1500B078B2 /* OUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B2678D26878E9A00B078B2 /* OUIKit.framework */; };
+		77B2679426878F1500B078B2 /* OUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 77B2678D26878E9A00B078B2 /* OUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +44,50 @@
 			remoteGlobalIDString = 6C58CC7C2625FF09001F7524;
 			remoteInfo = desafio;
 		};
+		77B2674B26878DA400B078B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77B2674426878DA300B078B2 /* ONetwork.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 77B2672A26878DA200B078B2;
+			remoteInfo = ONetwork;
+		};
+		77B2674D26878DA400B078B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77B2674426878DA300B078B2 /* ONetwork.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 77B2673326878DA300B078B2;
+			remoteInfo = ONetworkTests;
+		};
+		77B2678C26878E9A00B078B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77B2678526878E9900B078B2 /* OUIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 77B2676B26878E9900B078B2;
+			remoteInfo = OUIKit;
+		};
+		77B2678E26878E9A00B078B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77B2678526878E9900B078B2 /* OUIKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 77B2677426878E9900B078B2;
+			remoteInfo = OUIKitTests;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		77B2675526878DED00B078B2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				77B2675426878DED00B078B2 /* ONetwork.framework in Embed Frameworks */,
+				77B2679426878F1500B078B2 /* OUIKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6C19D333262F127B00068196 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -65,6 +112,8 @@
 		6C58CCA42625FF0D001F7524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C58CCBC26260262001F7524 /* AdListViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdListViewLayout.swift; sourceTree = "<group>"; };
 		6C58CCD126261245001F7524 /* Ad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
+		77B2674426878DA300B078B2 /* ONetwork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ONetwork.xcodeproj; path = modules/ONetwork/ONetwork.xcodeproj; sourceTree = "<group>"; };
+		77B2678526878E9900B078B2 /* OUIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OUIKit.xcodeproj; path = modules/OUIKit/OUIKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +121,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77B2675326878DED00B078B2 /* ONetwork.framework in Frameworks */,
+				77B2679326878F1500B078B2 /* OUIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,10 +146,14 @@
 		6C58CC742625FF09001F7524 = {
 			isa = PBXGroup;
 			children = (
+				77B2679226878EF200B078B2 /* UFeatures */,
+				77B2678526878E9900B078B2 /* OUIKit.xcodeproj */,
+				77B2674426878DA300B078B2 /* ONetwork.xcodeproj */,
 				6C58CC7F2625FF09001F7524 /* desafio */,
 				6C58CC962625FF0D001F7524 /* desafioTests */,
 				6C58CCA12625FF0D001F7524 /* desafioUITests */,
 				6C58CC7E2625FF09001F7524 /* Products */,
+				77B2675226878DED00B078B2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,6 +215,38 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		77B2674526878DA300B078B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				77B2674C26878DA400B078B2 /* ONetwork.framework */,
+				77B2674E26878DA400B078B2 /* ONetworkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		77B2675226878DED00B078B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		77B2678626878E9900B078B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				77B2678D26878E9A00B078B2 /* OUIKit.framework */,
+				77B2678F26878E9A00B078B2 /* OUIKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		77B2679226878EF200B078B2 /* UFeatures */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UFeatures;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -170,6 +257,7 @@
 				6C58CC792625FF09001F7524 /* Sources */,
 				6C58CC7A2625FF09001F7524 /* Frameworks */,
 				6C58CC7B2625FF09001F7524 /* Resources */,
+				77B2675526878DED00B078B2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -249,6 +337,16 @@
 			mainGroup = 6C58CC742625FF09001F7524;
 			productRefGroup = 6C58CC7E2625FF09001F7524 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 77B2674526878DA300B078B2 /* Products */;
+					ProjectRef = 77B2674426878DA300B078B2 /* ONetwork.xcodeproj */;
+				},
+				{
+					ProductGroup = 77B2678626878E9900B078B2 /* Products */;
+					ProjectRef = 77B2678526878E9900B078B2 /* OUIKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6C58CC7C2625FF09001F7524 /* desafio */,
@@ -257,6 +355,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		77B2674C26878DA400B078B2 /* ONetwork.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ONetwork.framework;
+			remoteRef = 77B2674B26878DA400B078B2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		77B2674E26878DA400B078B2 /* ONetworkTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ONetworkTests.xctest;
+			remoteRef = 77B2674D26878DA400B078B2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		77B2678D26878E9A00B078B2 /* OUIKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OUIKit.framework;
+			remoteRef = 77B2678C26878E9A00B078B2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		77B2678F26878E9A00B078B2 /* OUIKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OUIKitTests.xctest;
+			remoteRef = 77B2678E26878E9A00B078B2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6C58CC7B2625FF09001F7524 /* Resources */ = {
