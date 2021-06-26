@@ -146,7 +146,6 @@
 		6C58CC742625FF09001F7524 = {
 			isa = PBXGroup;
 			children = (
-				77B2679226878EF200B078B2 /* UFeatures */,
 				77B2678526878E9900B078B2 /* OUIKit.xcodeproj */,
 				77B2674426878DA300B078B2 /* ONetwork.xcodeproj */,
 				6C58CC7F2625FF09001F7524 /* desafio */,
@@ -238,13 +237,6 @@
 				77B2678F26878E9A00B078B2 /* OUIKitTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		77B2679226878EF200B078B2 /* UFeatures */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UFeatures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
