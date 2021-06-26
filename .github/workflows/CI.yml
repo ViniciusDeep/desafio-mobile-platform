@@ -1,0 +1,16 @@
+name: CI
+on:
+ # Trigger workflos to guarantee that everything works fine
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: macOS-latest
+    steps:
+     # Step to run automated tests
+    - uses: actions/checkout@v1
+    - name: Run tests
+      run: |
+        fastlane tests
