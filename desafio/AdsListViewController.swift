@@ -28,9 +28,6 @@ class AdsListViewController: UIViewController {
         let layout = AdListViewLayout()
         return layout
     }()
-    let session = URLSession.shared
-    let url = URL(string: "https://nga.olx.com.br/api/v1.2/public/ads?lim=25&region=11&sort=relevance&state=1&lang=pt")!
-
     // Mark: outlets
 
     @IBOutlet weak var adsCollectionView: UICollectionView!

@@ -14,6 +14,11 @@ public enum ProviderMethod: String {
     case delete = "DELETE"
 }
 
+public enum ProviderError: Error {
+    case cannotLoadData
+    case cannotDecodedData
+}
+
 public struct Provider<T: Decodable> {
     
     let session: Sessionable
@@ -22,7 +27,7 @@ public struct Provider<T: Decodable> {
         self.session = session
     }
     
-    public func request(router: ProviderEndpoint, withMethod method: ProviderMethod, params: [String : Any]?, completion: @escaping (Result<T, Error>) -> () ) {
+    public func request(router: ProviderEndpoint, withMethod method: ProviderMethod, params: [String : Any]?, completion: @escaping (Result<T, ProviderError>) -> () ) {
         method.request(session: self.session,router: router, params: params) { (result) in
             switch result {
             case .failure(let error):
@@ -32,7 +37,7 @@ public struct Provider<T: Decodable> {
                     let refund = try JSONDecoder().decode(T.self, from: data)
                     DispatchQueue.main.async {completion(.success(refund))}
                 } catch {
-                    DispatchQueue.main.async {completion(.failure(error))}
+                    DispatchQueue.main.async {completion(.failure(.cannotDecodedData))}
                 }
             }
         }
@@ -40,7 +45,7 @@ public struct Provider<T: Decodable> {
 }
 
 extension ProviderMethod {
-    public func request(session: Sessionable,router: ProviderEndpoint, params: [String: Any]?, completion: @escaping (Result<Data, Error>)-> ()) {
+    public func request(session: Sessionable,router: ProviderEndpoint, params: [String: Any]?, completion: @escaping (Result<Data, ProviderError>)-> ()) {
         guard let url = URL(string: router.endpoint) else {return}
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = rawValue
@@ -54,12 +59,12 @@ extension ProviderMethod {
             }
             
            session.dataTask(with: urlRequest) { (data, _, err) in
-                if let error = err { completion(.failure(error))}
+            if err != nil { completion(.failure(.cannotLoadData))}
                 guard let data = data else {return print("Does not load data")}
                 completion(.success(data))
             }.resume()
         } catch {
-            completion(.failure(error))
+            completion(.failure(.cannotLoadData))
         }
     }
 }
