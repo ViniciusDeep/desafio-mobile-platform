@@ -8,6 +8,17 @@
 import UIKit
 import ONetwork
 
+public enum ProvideyRouter: String, ProviderEndpoint {
+    
+    case home = "https://nga.olx.com.br/api/v1.2/public/ads?lim=25&region=11&sort=relevance&state=1&lang=pt"
+    public var endpoint: String{
+        switch self {
+        case .home:
+            return rawValue
+        }
+    }
+}
+
 class AdsListViewController: UIViewController {
 
     // Mark: properties
@@ -17,9 +28,6 @@ class AdsListViewController: UIViewController {
         let layout = AdListViewLayout()
         return layout
     }()
-    let session = URLSession.shared
-    let url = URL(string: "https://nga.olx.com.br/api/v1.2/public/ads?lim=25&region=11&sort=relevance&state=1&lang=pt")!
-
     // Mark: outlets
 
     @IBOutlet weak var adsCollectionView: UICollectionView!
@@ -33,28 +41,20 @@ class AdsListViewController: UIViewController {
     // Mark: REST
     
     private func getAds() {
-        let task = session.dataTask(with: url, completionHandler: { data, response, error in
-            // Check the response
-            print(response)
-            if error != nil {
+        let provider = Provider<ListAds>()
+        
+        provider.request(router: ProvideyRouter.home, withMethod: .get, params: nil) { (result) in
+            switch result {
+            case .failure(let error):
                 print(error)
-                return
-            }
-            // Serialize the data into an object
-            do {
-                let json = try JSONDecoder().decode(ListAds.self, from: data! )
-                print(json)
-                self.ads = json.list_ads ?? []
+            case .success(let ads):
+                self.ads = ads.list_ads ?? []
                 DispatchQueue.main.async {
-                    self.adsCollectionView.reloadData()
+                  self.adsCollectionView.reloadData()
+                    }
                 }
-            } catch {
-                print("Error during JSON serialization: \(error.localizedDescription)")
             }
-        })
-        task.resume()
-    }
-
+        }
 }
 
 // MARK: UICollectionViewDataSource

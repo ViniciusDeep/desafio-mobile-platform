@@ -8,26 +8,49 @@
 import XCTest
 @testable import ONetwork
 
+struct FakeModel: Decodable {
+    let id: Int
+    let name: String
+}
+
 class ONetworkTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func test_failure_scenario_to_fetch() {
+        var mockData: Data? {
+            """
+            [{
+              "id": 2,
+              "name": "Resident Evil Vilage"
+            }]
+            """.data(using: .utf8)
         }
+        
+        enum ProvideyRouter: String, ProviderEndpoint {
+            case home = "www.any.com/home" // Something to test
+            public var endpoint: String{
+                switch self {
+                case .home:
+                    return rawValue
+                }
+            }
+        }
+        
+        let sessionSpy = SessionSpy(dataTask: DataTaskSpy(data: mockData))
+      
+        let expectation = XCTestExpectation(description: "Should show error to fetch fake model")
+        
+        Provider<FakeModel>(session: sessionSpy).request(router: ProvideyRouter.home, withMethod: .get, params: nil) { (result) in
+            switch result {
+            case .failure:
+                expectation.fulfill()
+            case .success(let fakeModel):
+                XCTFail("Did not load \(fakeModel)")
+            
+            }
+        }
+        wait(for: [expectation], timeout: 1.0)
     }
-
 }
+
+
+

@@ -10,7 +10,9 @@
 		77B2673426878DA300B078B2 /* ONetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B2672A26878DA200B078B2 /* ONetwork.framework */; };
 		77B2673926878DA300B078B2 /* ONetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B2673826878DA300B078B2 /* ONetworkTests.swift */; };
 		77B2673B26878DA300B078B2 /* ONetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 77B2672D26878DA200B078B2 /* ONetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		77B2675E26878E1200B078B2 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B2675D26878E1200B078B2 /* Service.swift */; };
+		77B2675E26878E1200B078B2 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B2675D26878E1200B078B2 /* Provider.swift */; };
+		77B268852687970F00B078B2 /* Sessionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B268842687970F00B078B2 /* Sessionable.swift */; };
+		77B2688B268798D100B078B2 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B2688A268798D100B078B2 /* Seeds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +32,9 @@
 		77B2673326878DA300B078B2 /* ONetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ONetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B2673826878DA300B078B2 /* ONetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ONetworkTests.swift; sourceTree = "<group>"; };
 		77B2673A26878DA300B078B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		77B2675D26878E1200B078B2 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		77B2675D26878E1200B078B2 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		77B268842687970F00B078B2 /* Sessionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessionable.swift; sourceTree = "<group>"; };
+		77B2688A268798D100B078B2 /* Seeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 		77B2673726878DA300B078B2 /* ONetworkTests */ = {
 			isa = PBXGroup;
 			children = (
+				77B2688A268798D100B078B2 /* Seeds.swift */,
 				77B2673826878DA300B078B2 /* ONetworkTests.swift */,
 				77B2673A26878DA300B078B2 /* Info.plist */,
 			);
@@ -92,7 +97,8 @@
 		77B2675C26878DF700B078B2 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				77B2675D26878E1200B078B2 /* Service.swift */,
+				77B2675D26878E1200B078B2 /* Provider.swift */,
+				77B268842687970F00B078B2 /* Sessionable.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -206,7 +212,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77B2675E26878E1200B078B2 /* Service.swift in Sources */,
+				77B268852687970F00B078B2 /* Sessionable.swift in Sources */,
+				77B2675E26878E1200B078B2 /* Provider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77B2688B268798D100B078B2 /* Seeds.swift in Sources */,
 				77B2673926878DA300B078B2 /* ONetworkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
