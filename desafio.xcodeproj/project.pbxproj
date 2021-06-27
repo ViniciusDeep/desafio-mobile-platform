@@ -163,9 +163,9 @@
 		6C58CC7F2625FF09001F7524 /* desafio */ = {
 			isa = PBXGroup;
 			children = (
-				6C58CC892625FF0C001F7524 /* Assets.xcassets */,
 				6C58CC8B2625FF0C001F7524 /* LaunchScreen.storyboard */,
 				6C58CC8E2625FF0C001F7524 /* Info.plist */,
+				77B269102688254200B078B2 /* Resources */,
 				77B269002688244800B078B2 /* Settings */,
 				77B268FF2688243B00B078B2 /* Scenes */,
 				6C58CCB62625FFB4001F7524 /* UI */,
@@ -284,6 +284,14 @@
 				6C58CCD126261245001F7524 /* Ad.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		77B269102688254200B078B2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6C58CC892625FF0C001F7524 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
