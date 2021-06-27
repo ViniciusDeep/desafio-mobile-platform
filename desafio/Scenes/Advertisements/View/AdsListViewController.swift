@@ -8,20 +8,13 @@
 import UIKit
 import ONetwork
 
-public enum ProvideyRouter: String, ProviderEndpoint {
-    
-    case home = "https://nga.olx.com.br/api/v1.2/public/ads?lim=25&region=11&sort=relevance&state=1&lang=pt"
-    public var endpoint: String{
-        switch self {
-        case .home:
-            return rawValue
-        }
-    }
-}
+
 
 class AdsListViewController: UIViewController {
 
     // Mark: properties
+    
+    private let interactor: AdsListBussinessLogic
     
     var ads: [Ad] = []
     lazy private var flowLayout: AdListViewLayout = {
@@ -31,30 +24,27 @@ class AdsListViewController: UIViewController {
     // Mark: outlets
 
     @IBOutlet weak var adsCollectionView: UICollectionView!
-
+    
+    init(interactor: AdsListBussinessLogic) {
+        self.interactor = interactor
+        super.init(nibName: nil, bundle: .main)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        getAds()
+        fetchAds()
     }
     
     // Mark: REST
     
-    private func getAds() {
-        let provider = Provider<ListAds>()
-        
-        provider.request(router: ProvideyRouter.home, withMethod: .get, params: nil) { (result) in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let ads):
-                self.ads = ads.list_ads ?? []
-                DispatchQueue.main.async {
-                  self.adsCollectionView.reloadData()
-                    }
-                }
-            }
-        }
+    private func fetchAds() {
+        interactor.fetch()
+    }
 }
 
 // MARK: UICollectionViewDataSource
@@ -85,3 +75,11 @@ extension AdsListViewController {
             adsCollectionView.register(UINib(nibName: "AdListCardViewCell", bundle: nil), forCellWithReuseIdentifier: "AdListCardViewCellIdentifier")
     }
 }
+
+
+extension AdsListViewController {
+    
+    func didPresentAds(ads: ListAd)
+    
+}
+
