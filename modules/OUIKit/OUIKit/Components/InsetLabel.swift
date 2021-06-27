@@ -1,29 +1,28 @@
 //
 //  InsetLabel.swift
-//  desafio
+//  OUIKit
 //
-//  Created by Fernando Luiz Goulart on 14/04/21.
+//  Created by Vinicius Mangueira Correa on 27/06/21.
 //
 
-import Foundation
 import UIKit
 
-class InsetLabel: UILabel {
+public final class InsetLabel: UILabel {
     var edgeInset: UIEdgeInsets?
     
-    func setEdgeInset(edgeInset: UIEdgeInsets) {
+    public func setEdgeInset(edgeInset: UIEdgeInsets) {
         self.edgeInset = edgeInset
         self.invalidateIntrinsicContentSize()
     }
     
-    override func drawText(in rect: CGRect) {
+    public override func drawText(in rect: CGRect) {
         guard let newEdgeInset = self.edgeInset else {
             return super.drawText(in: rect)
         }
         return super.drawText(in: rect.inset(by: newEdgeInset))
     }
     
-    func intrinsicContentSize() -> CGSize {
+    public func intrinsicContentSize() -> CGSize {
         if (self.text?.count == 0 || self.edgeInset == nil) {
             return super.intrinsicContentSize
         }

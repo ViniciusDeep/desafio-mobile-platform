@@ -15,10 +15,10 @@ protocol AdsListBussinessLogic {
 struct AdsListInteractor {
     
     let repository: AdsListConfigurableRepository
-    let presenter: AdsListPresenter
+    let presenter: AdsListPresentationLogic
     
     init(repository: AdsListConfigurableRepository = AdsListRepository(),
-         presenter: AdsListPresenter) {
+         presenter: AdsListPresentationLogic = AdsListPresenter()) {
         self.repository = repository
         self.presenter = presenter
     }

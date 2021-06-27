@@ -7,8 +7,9 @@
 
 import UIKit
 import OUIKit
+import Reusable
 
-class AdListCardViewCell: UICollectionViewCell {
+class AdListCardViewCell: UICollectionViewCell, NibLoadable, Reusable {
     
     static var nibName = "AdListCardViewCell"
     static var reuseIdentifier = "AdListCardViewCellIdentifier"
@@ -28,11 +29,13 @@ class AdListCardViewCell: UICollectionViewCell {
     }
     
     //MARK: - Public
-    func configure(ad: Ad) {
+    func configure(ad: Ad?) {
         featuredBadge.backgroundColor = UIColor(rgb: 0x6E0AD6)
         featuredLine.backgroundColor = UIColor(rgb: 0x6E0AD6)
         featuredBadge.isHidden = true
         featuredLine.isHidden = true
+        
+        guard let ad = ad else { return }
         
         self.titleLabel.text = ad.ad.subject
         self.priceLabel.text = ad.ad.prices?[0].label ?? ""

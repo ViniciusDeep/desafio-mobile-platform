@@ -7,26 +7,18 @@
 
 import UIKit
 import ONetwork
+import OUIKit
+import Reusable
 
-
-
-class AdsListViewController: UIViewController {
-
-    // Mark: properties
-    
+final class AdsListViewController: UIViewController {
     private let interactor: AdsListBussinessLogic
-    
-    var ads: [Ad] = []
-    lazy private var flowLayout: AdListViewLayout = {
-        let layout = AdListViewLayout()
-        return layout
-    }()
+    var viewModel: AdsListViewModel?
     
     lazy var collectionView: UICollectionView  = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: FlowListViewLayout())
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "AdListCardViewCell", bundle: nil), forCellWithReuseIdentifier: "AdListCardViewCellIdentifier")
+        collectionView.register(cellType: AdListCardViewCell.self)
         return collectionView
     }()
     
@@ -41,47 +33,39 @@ class AdsListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        setupCollectionView()
+    }
+    
+    fileprivate func setupCollectionView() {
+        collectionView.backgroundColor = .white
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        view = collectionView
         interactor.fetch()
     }
 }
 
-// MARK: UICollectionViewDataSource
-
 extension AdsListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ads.count
+        return viewModel?.adsCount ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AdListCardViewCellIdentifier", for: indexPath) as? AdListCardViewCell, !ads.isEmpty else {
-            return UICollectionViewCell()
-        }
-        cell.configure(ad: ads[indexPath.row])
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: AdListCardViewCell.self)
+        cell.configure(ad: viewModel?.formatItem(for: indexPath.row))
         return cell
     }
 }
 
-// MARK: Setup
-
 extension AdsListViewController {
-    
-    private func setupUI() {
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        view = collectionView
-    }
-}
-
-
-extension AdsListViewController {
-    
-    func didPresentAds(ads: [Ad]) {
-        self.ads = ads
+    func refeshAds() {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
     }
     
+    func showError(message: String, title: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
 

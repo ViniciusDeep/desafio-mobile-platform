@@ -1,18 +1,17 @@
 //
-//  AdsListViewLayout.swift
-//  desafio
+//  AdListViewLayout.swift
+//  OUIKit
 //
-//  Created by Fernando Luiz Goulart on 13/04/21.
+//  Created by Vinicius Mangueira Correa on 27/06/21.
 //
 
-import Foundation
 import UIKit
 
-class AdListViewLayout: UICollectionViewFlowLayout {
+public final class FlowListViewLayout: UICollectionViewFlowLayout {
 
     let cardCellHeight:CGFloat = 128.0
 
-    override init() {
+    public override init() {
         super.init()
         self.setup()
     }
@@ -21,7 +20,7 @@ class AdListViewLayout: UICollectionViewFlowLayout {
         super.init(coder: coder)
     }
     
-    override func prepare() {
+    public override func prepare() {
         let height:CGFloat = cardCellHeight
         guard let collection = self.collectionView else { return }
         let width:CGFloat = collection.bounds.size.width - (self.sectionInset.left * 2)
@@ -35,3 +34,4 @@ class AdListViewLayout: UICollectionViewFlowLayout {
     }
 
 }
+

@@ -9,10 +9,10 @@ import ONetwork
 
 public enum ProvideyRouter: String, ProviderEndpoint {
     
-    case baseURL = "https://nga.olx.com.br/api/v1.2/public/ads?lim=25®ion=11&sort=relevance&state=1&lang=pt"
+    case home = "https://nga.olx.com.br/api/v1.2/public/ads?lim=25&region=11&sort=relevance&state=1&lang=pt"
     public var endpoint: String{
         switch self {
-        case .baseURL:
+        case .home:
             return rawValue
         }
     }

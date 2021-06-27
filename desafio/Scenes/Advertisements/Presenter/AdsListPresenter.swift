@@ -1,5 +1,5 @@
 //
-//  AdsListPresenter.swift
+//  Presenter.swift
 //  desafio
 //
 //  Created by Vinicius Mangueira Correa on 27/06/21.
@@ -19,10 +19,17 @@ final class AdsListPresenter {
 
 extension AdsListPresenter: AdsListPresentationLogic {
     func show(ads: ListAds) {
-        viewController?.didPresentAds(ads: ads.list_ads ?? [])
+        viewController?.viewModel = AdsListViewModel(ads: ads.list_ads ?? [])
+        viewController?.refeshAds()
+       
     }
     
     func show(error: ProviderError) {
-        
+        switch error {
+        case .cannotDecodedData:
+            viewController?.showError(message: "Parece que tivemos um problema ao carregar seus dados", title: "Ops")
+        case .cannotLoadData:
+            viewController?.showError(message: "Parece que tivemos um problema interno no servidor", title: "Ops")
+        }
     }
 }
