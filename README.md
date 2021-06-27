@@ -100,7 +100,7 @@ Boa sorte :)
 
  ![](https://zonneveld.dev/wp-content/uploads/2019/05/VIP-CleanSwift-cycle.png)
 
- ## Módulos:
+ ## 🕸 Módulos:
 
  A modularização foi definida nos seguintes módulos:
 
