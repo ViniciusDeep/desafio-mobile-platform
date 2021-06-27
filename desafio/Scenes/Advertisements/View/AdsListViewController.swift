@@ -50,9 +50,7 @@ extension AdsListViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: AdListCardViewCell.self)
-        cell.configure(ad: viewModel?.formatItem(for: indexPath.row))
-        return cell
+        collectionView.dequeueReusableCell(for: indexPath, cellType: AdListCardViewCell.self).configure(ad: viewModel?.formatItem(for: indexPath.row))
     }
 }
 
