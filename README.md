@@ -1,3 +1,5 @@
+<a href="https://codeclimate.com/github/ViniciusDeep/desafio-mobile-platform/maintainability"><img src="https://api.codeclimate.com/v1/badges/63c71574fd97656ca0df/maintainability" /></a>
+
 ## 🧐 DESAFIO IOS - MOBILE PLATFORM
 
 Uma das principais responsabilidades do time de *mobile platform* da OLX Brasil é evoluir constantemente a arquitetura dos nossos apps.
@@ -120,5 +122,7 @@ Devido ao tempo alguns pontos no projeto entraram como débito técnico, e aqui 
 * [] Utilizar project tool para gerar os módulos e evitar o uso de XcodeProj([Xcode Gen](https://github.com/yonaskolb/XcodeGen), [Tuist](https://tuist.io/))
 * [] Refatorar os modelos para retirar o uso de camel case , e usar DTO's para ficarem responsáves pela parte de transferencia de dados entre os objetos concretos
 * [] Utilização de lint e Dagner para aferir style  guide no source
+* [] Setar Code Climate para pegar o coverage do Repo
+* [] Cobrir todos os cenários de testes com diferentes complexidades ciclomática.
 
 
