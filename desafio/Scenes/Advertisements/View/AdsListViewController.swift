@@ -21,9 +21,14 @@ class AdsListViewController: UIViewController {
         let layout = AdListViewLayout()
         return layout
     }()
-    // Mark: outlets
-
-    @IBOutlet weak var adsCollectionView: UICollectionView!
+    
+    lazy var collectionView: UICollectionView  = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UINib(nibName: "AdListCardViewCell", bundle: nil), forCellWithReuseIdentifier: "AdListCardViewCellIdentifier")
+        return collectionView
+    }()
     
     init(interactor: AdsListBussinessLogic) {
         self.interactor = interactor
@@ -37,12 +42,6 @@ class AdsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        fetchAds()
-    }
-    
-    // Mark: REST
-    
-    private func fetchAds() {
         interactor.fetch()
     }
 }
@@ -56,7 +55,7 @@ extension AdsListViewController: UICollectionViewDelegate, UICollectionViewDataS
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = adsCollectionView.dequeueReusableCell(withReuseIdentifier: "AdListCardViewCellIdentifier", for: indexPath) as? AdListCardViewCell, !ads.isEmpty else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AdListCardViewCellIdentifier", for: indexPath) as? AdListCardViewCell, !ads.isEmpty else {
             return UICollectionViewCell()
         }
         cell.configure(ad: ads[indexPath.row])
@@ -69,17 +68,20 @@ extension AdsListViewController: UICollectionViewDelegate, UICollectionViewDataS
 extension AdsListViewController {
     
     private func setupUI() {
-            adsCollectionView.delegate = self
-            adsCollectionView.dataSource = self
-            adsCollectionView.collectionViewLayout = flowLayout
-            adsCollectionView.register(UINib(nibName: "AdListCardViewCell", bundle: nil), forCellWithReuseIdentifier: "AdListCardViewCellIdentifier")
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        view = collectionView
     }
 }
 
 
 extension AdsListViewController {
     
-    func didPresentAds(ads: ListAd)
+    func didPresentAds(ads: [Ad]) {
+        self.ads = ads
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
     
 }
 

@@ -19,7 +19,7 @@ final class AdsListPresenter {
 
 extension AdsListPresenter: AdsListPresentationLogic {
     func show(ads: ListAds) {
-        
+        viewController?.didPresentAds(ads: ads.list_ads ?? [])
     }
     
     func show(error: ProviderError) {
