@@ -25,5 +25,5 @@ end
 
 # Lane with responsible to keep testes running
 lane :tests do
-  run_tests(scheme: "desafioTests")
+  run_tests(scheme: "desafio")
 end

@@ -1,13 +1,13 @@
 //
 //  UIImageView+Extension.swift
-//  desafio
+//  OUIKit
 //
-//  Created by Fernando Luiz Goulart on 20/04/21.
+//  Created by Vinicius Mangueira Correa on 27/06/21.
 //
 
 import UIKit
 
-extension UIImageView {
+public extension UIImageView {
     func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
         contentMode = mode
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -27,3 +27,4 @@ extension UIImageView {
         downloaded(from: url, contentMode: mode)
     }
 }
+

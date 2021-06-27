@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import OUIKit
 
 class AdListCardViewCell: UICollectionViewCell {
     
