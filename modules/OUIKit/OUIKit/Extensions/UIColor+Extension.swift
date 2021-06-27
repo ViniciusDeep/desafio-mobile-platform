@@ -1,13 +1,13 @@
 //
-//  UIColor+Extesion.swift
-//  desafio
+//  UIColor+Extensions.swift
+//  OUIKit
 //
-//  Created by Fernando Luiz Goulart on 15/04/21.
+//  Created by Vinicius Mangueira Correa on 27/06/21.
 //
 
 import UIKit
 
-extension UIColor {
+public extension UIColor {
    convenience init(red: Int, green: Int, blue: Int) {
        assert(red >= 0 && red <= 255, "Invalid red component")
        assert(green >= 0 && green <= 255, "Invalid green component")

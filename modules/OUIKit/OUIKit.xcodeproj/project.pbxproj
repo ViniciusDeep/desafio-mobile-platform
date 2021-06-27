@@ -10,6 +10,9 @@
 		77B2677526878E9900B078B2 /* OUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B2676B26878E9900B078B2 /* OUIKit.framework */; };
 		77B2677A26878E9900B078B2 /* OUIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B2677926878E9900B078B2 /* OUIKitTests.swift */; };
 		77B2677C26878E9900B078B2 /* OUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 77B2676E26878E9900B078B2 /* OUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77B268E82688228A00B078B2 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B268E72688228A00B078B2 /* UIView+Extension.swift */; };
+		77B268EC2688229700B078B2 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B268EB2688229700B078B2 /* UIColor+Extension.swift */; };
+		77B268F2268822A500B078B2 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B268F1268822A500B078B2 /* UIImageView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		77B2677426878E9900B078B2 /* OUIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OUIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B2677926878E9900B078B2 /* OUIKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUIKitTests.swift; sourceTree = "<group>"; };
 		77B2677B26878E9900B078B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77B268E72688228A00B078B2 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		77B268EB2688229700B078B2 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		77B268F1268822A500B078B2 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,7 @@
 		77B2676D26878E9900B078B2 /* OUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				77B268E62688227800B078B2 /* Extensions */,
 				77B2676E26878E9900B078B2 /* OUIKit.h */,
 				77B2676F26878E9900B078B2 /* Info.plist */,
 			);
@@ -84,6 +91,16 @@
 				77B2677B26878E9900B078B2 /* Info.plist */,
 			);
 			path = OUIKitTests;
+			sourceTree = "<group>";
+		};
+		77B268E62688227800B078B2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				77B268E72688228A00B078B2 /* UIView+Extension.swift */,
+				77B268EB2688229700B078B2 /* UIColor+Extension.swift */,
+				77B268F1268822A500B078B2 /* UIImageView+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +164,7 @@
 				TargetAttributes = {
 					77B2676A26878E9900B078B2 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 					77B2677326878E9900B078B2 = {
 						CreatedOnToolsVersion = 12.4;
@@ -194,6 +212,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77B268F2268822A500B078B2 /* UIImageView+Extension.swift in Sources */,
+				77B268E82688228A00B078B2 /* UIView+Extension.swift in Sources */,
+				77B268EC2688229700B078B2 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +362,7 @@
 		77B2678026878E9900B078B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 92KFQZ687A;
@@ -357,6 +379,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.will.OUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +388,7 @@
 		77B2678126878E9900B078B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 92KFQZ687A;
@@ -389,6 +413,7 @@
 		77B2678326878E9900B078B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92KFQZ687A;
 				INFOPLIST_FILE = OUIKitTests/Info.plist;
@@ -407,6 +432,7 @@
 		77B2678426878E9900B078B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92KFQZ687A;
 				INFOPLIST_FILE = OUIKitTests/Info.plist;
