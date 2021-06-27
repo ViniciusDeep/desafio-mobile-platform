@@ -41,6 +41,13 @@ iOS 14.4
  ### Workflow
 
  O projeto conta com um workflow de git que consiste na qual todo artefato que deve ser publicado em master, deve passar pela esteira de integração e rodar os testes para garantir maior integridade no projeto.
+ 
+ #### GitHub Project
+ 
+ Todo PR criado será automatizado no Project do Github, e passará pelas esteiras de In Progress até chegar em Done
+
+ <img width="352" alt="Captura de Tela 2021-06-27 às 14 53 28" src="https://user-images.githubusercontent.com/32227073/123554672-703b6780-d757-11eb-8b5d-9db149012523.png">
+
 
  ### CI + Fastlane + Code Climate = 💜 
 
@@ -64,6 +71,19 @@ iOS 14.4
  * test/
  * task/
  * fix/
+ 
+ #### Commits:
+ 
+ Temos um guide de commit, onde o commit deve conter um emoji + prefix sendo eles:
+ 
+ ✅ Referente a testes, 🔖 Documentação, 🛠 Ajuste no projeto, 🖌 Mudança no layout, 👨🏽‍🎨 Mudança na Scene
+ 
+*  Add: 
+*  Chore:
+ * Test:
+ * Improvement: 
+ * Update:
+ * Create:
 
 
  ## 💡 Arquitetura:
