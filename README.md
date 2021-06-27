@@ -110,7 +110,7 @@ Boa sorte :)
  - ONetwork: Módulo com a camada de network.
  - Desafio: Módulo principal do app com as seguintes scenes
 
-🔖 Débitos Técnicos
+## 🔖 Débitos Técnicos
 
 Devido ao tempo alguns pontos no projeto entraram como débito técnico, e aqui elucidaremos formas de resolver 
 
