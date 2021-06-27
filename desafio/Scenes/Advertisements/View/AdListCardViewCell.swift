@@ -7,8 +7,9 @@
 
 import UIKit
 import OUIKit
+import Reusable
 
-class AdListCardViewCell: UICollectionViewCell {
+class AdListCardViewCell: UICollectionViewCell, NibLoadable, Reusable {
     
     static var nibName = "AdListCardViewCell"
     static var reuseIdentifier = "AdListCardViewCellIdentifier"
@@ -28,11 +29,14 @@ class AdListCardViewCell: UICollectionViewCell {
     }
     
     //MARK: - Public
-    func configure(ad: Ad) {
+    @discardableResult
+    func configure(ad: Ad?) -> AdListCardViewCell {
         featuredBadge.backgroundColor = UIColor(rgb: 0x6E0AD6)
         featuredLine.backgroundColor = UIColor(rgb: 0x6E0AD6)
         featuredBadge.isHidden = true
         featuredLine.isHidden = true
+        
+        guard let ad = ad else { return self }
         
         self.titleLabel.text = ad.ad.subject
         self.priceLabel.text = ad.ad.prices?[0].label ?? ""
@@ -44,10 +48,10 @@ class AdListCardViewCell: UICollectionViewCell {
         dateFormatter.locale = Locale(identifier: "pt-BR")
         dateFormatter.dateFormat = "dd/MM 'às' HH:mm"
         timeLocationLabel.text = "\(location) - \(dateFormatter.string(from: date))"
-        guard let thumb = ad.ad.thumbnail else { return }
+        guard let thumb = ad.ad.thumbnail else { return self }
         let imageUrl = "\(String(describing: thumb.base_url))/images/\(String(describing: thumb.path))"
         self.adImageView.downloaded(from: imageUrl)
-    
+        return self
     }
     
     private func setupBorder() {

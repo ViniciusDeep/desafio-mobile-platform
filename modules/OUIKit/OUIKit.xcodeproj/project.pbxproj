@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77A7BFF62688A409002F755F /* AdListViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A7BFF52688A409002F755F /* AdListViewLayout.swift */; };
+		77A7BFF82688A43E002F755F /* InsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A7BFF72688A43E002F755F /* InsetLabel.swift */; };
+		77A7C0022688A962002F755F /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = 77A7C0012688A962002F755F /* Reusable */; };
 		77B2677526878E9900B078B2 /* OUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B2676B26878E9900B078B2 /* OUIKit.framework */; };
 		77B2677A26878E9900B078B2 /* OUIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B2677926878E9900B078B2 /* OUIKitTests.swift */; };
 		77B2677C26878E9900B078B2 /* OUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 77B2676E26878E9900B078B2 /* OUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -26,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		77A7BFF52688A409002F755F /* AdListViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdListViewLayout.swift; sourceTree = "<group>"; };
+		77A7BFF72688A43E002F755F /* InsetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetLabel.swift; sourceTree = "<group>"; };
 		77B2676B26878E9900B078B2 /* OUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B2676E26878E9900B078B2 /* OUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OUIKit.h; sourceTree = "<group>"; };
 		77B2676F26878E9900B078B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77A7C0022688A962002F755F /* Reusable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +62,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77A7BFF42688A3FF002F755F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				77A7BFF52688A409002F755F /* AdListViewLayout.swift */,
+				77A7BFF72688A43E002F755F /* InsetLabel.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		77B2676126878E9900B078B2 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +92,7 @@
 		77B2676D26878E9900B078B2 /* OUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				77A7BFF42688A3FF002F755F /* Components */,
 				77B268E62688227800B078B2 /* Extensions */,
 				77B2676E26878E9900B078B2 /* OUIKit.h */,
 				77B2676F26878E9900B078B2 /* Info.plist */,
@@ -131,6 +147,9 @@
 			dependencies = (
 			);
 			name = OUIKit;
+			packageProductDependencies = (
+				77A7C0012688A962002F755F /* Reusable */,
+			);
 			productName = OUIKit;
 			productReference = 77B2676B26878E9900B078B2 /* OUIKit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -180,6 +199,9 @@
 				Base,
 			);
 			mainGroup = 77B2676126878E9900B078B2;
+			packageReferences = (
+				77A7C0002688A962002F755F /* XCRemoteSwiftPackageReference "Reusable" */,
+			);
 			productRefGroup = 77B2676C26878E9900B078B2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -215,6 +237,8 @@
 				77B268F2268822A500B078B2 /* UIImageView+Extension.swift in Sources */,
 				77B268E82688228A00B078B2 /* UIView+Extension.swift in Sources */,
 				77B268EC2688229700B078B2 /* UIColor+Extension.swift in Sources */,
+				77A7BFF82688A43E002F755F /* InsetLabel.swift in Sources */,
+				77A7BFF62688A409002F755F /* AdListViewLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +503,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		77A7C0002688A962002F755F /* XCRemoteSwiftPackageReference "Reusable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/Reusable";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		77A7C0012688A962002F755F /* Reusable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77A7C0002688A962002F755F /* XCRemoteSwiftPackageReference "Reusable" */;
+			productName = Reusable;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 77B2676226878E9900B078B2 /* Project object */;
 }
