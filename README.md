@@ -28,15 +28,15 @@ Boa sorte :)
  
  ### Setup
 
-1- Clonar a branch
-2- CMD + R
-3- Para rodar os testes CMD + U
+* 1- Clonar a branch
+* 2- CMD + R
+* 3- Para rodar os testes CMD + U
 
 #### Requisitos:
 
-Swift 5.0
-Xcode 12.1 || 12.2 || 12.3 || 12.4 || 12.5(Versões garantidas a serem suportadas pelo projeto)
-iOS 14.4
+* Swift 5.0
+* Xcode 12.1 || 12.2 || 12.3 || 12.4 || 12.5(Versões garantidas a serem suportadas pelo projeto)
+* iOS 14.4
 
  ### Workflow
 
@@ -67,10 +67,10 @@ iOS 14.4
  
  As branchs devem segui o padrão:
  
- * feature/
- * test/
- * task/
- * fix/
+ * feature/[Name]
+ * test/[Name]
+ * task/[Name]
+ * fix/[Name]
  
  #### Commits:
  
@@ -112,11 +112,11 @@ iOS 14.4
 
 Devido ao tempo alguns pontos no projeto entraram como débito técnico, e aqui elucidaremos formas de resolver 
 
-[] Testes de UI utilizando o próprio XCUITest
-[] Refatorar a célula para o uso de ViewCode afim de reaproveitar mais ainda
-[] Refatorar o download da imagem, para incluir cache e desacoplar a lógica a extesion de UIImageView como exemplo `[Nuke](https://github.com/kean/Nuke)`
-[] Utilizar project tool para gerar os módulos e evitar o uso de XcodeProj([Xcode Gen](https://github.com/yonaskolb/XcodeGen), [Tuist](https://tuist.io/))
-[] Refatorar os modelos para retirar o uso de camel case , e usar DTO's para ficarem responsáves pela parte de transferencia de dados entre os objetos concretos
-[] Utilização de lint e Dagner para aferir style  guide no source
+* [] Testes de UI utilizando o próprio XCUITest
+* [] Refatorar a célula para o uso de ViewCode afim de reaproveitar mais ainda
+* [] Refatorar o download da imagem, para incluir cache e desacoplar a lógica a extesion de UIImageView como exemplo `[Nuke](https://github.com/kean/Nuke)`
+* [] Utilizar project tool para gerar os módulos e evitar o uso de XcodeProj([Xcode Gen](https://github.com/yonaskolb/XcodeGen), [Tuist](https://tuist.io/))
+* [] Refatorar os modelos para retirar o uso de camel case , e usar DTO's para ficarem responsáves pela parte de transferencia de dados entre os objetos concretos
+* [] Utilização de lint e Dagner para aferir style  guide no source
 
 
