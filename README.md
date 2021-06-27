@@ -23,6 +23,8 @@ Dica:
 * Para que possamos analisar o seu processo de desenvolvimento, não desenvolva tudo em uma única branch ou em um único commit
 
 Boa sorte :)
+
+### Essa documentação também pode ser conferida na [WIKI](https://github.com/ViniciusDeep/desafio-mobile-platform/wiki/1--%F0%9F%9B%A0-Setup-&-Workflow-do-Projeto) do projeto
  
  ## 🛠 Setup & Workflow do Projeto
  
