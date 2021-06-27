@@ -20,6 +20,9 @@
 		6C58CCA32625FF0D001F7524 /* desafioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C58CCA22625FF0D001F7524 /* desafioUITests.swift */; };
 		6C58CCBD26260262001F7524 /* AdListViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C58CCBC26260262001F7524 /* AdListViewLayout.swift */; };
 		6C58CCD226261245001F7524 /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C58CCD126261245001F7524 /* Ad.swift */; };
+		77A7BFE02688985F002F755F /* ListAdsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A7BFDF2688985F002F755F /* ListAdsInteractor.swift */; };
+		77A7BFE426889879002F755F /* ListAdsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A7BFE326889879002F755F /* ListAdsRepository.swift */; };
+		77A7BFE62688989C002F755F /* ListAdsEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A7BFE52688989C002F755F /* ListAdsEndPoint.swift */; };
 		77B2675326878DED00B078B2 /* ONetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B2674C26878DA400B078B2 /* ONetwork.framework */; };
 		77B2675426878DED00B078B2 /* ONetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 77B2674C26878DA400B078B2 /* ONetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		77B2679326878F1500B078B2 /* OUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B2678D26878E9A00B078B2 /* OUIKit.framework */; };
@@ -106,6 +109,9 @@
 		6C58CCA42625FF0D001F7524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C58CCBC26260262001F7524 /* AdListViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdListViewLayout.swift; sourceTree = "<group>"; };
 		6C58CCD126261245001F7524 /* Ad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
+		77A7BFDF2688985F002F755F /* ListAdsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAdsInteractor.swift; sourceTree = "<group>"; };
+		77A7BFE326889879002F755F /* ListAdsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAdsRepository.swift; sourceTree = "<group>"; };
+		77A7BFE52688989C002F755F /* ListAdsEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAdsEndPoint.swift; sourceTree = "<group>"; };
 		77B2674426878DA300B078B2 /* ONetwork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ONetwork.xcodeproj; path = modules/ONetwork/ONetwork.xcodeproj; sourceTree = "<group>"; };
 		77B2678526878E9900B078B2 /* OUIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OUIKit.xcodeproj; path = modules/OUIKit/OUIKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -199,6 +205,39 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		77A7BFD926889845002F755F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		77A7BFDE26889850002F755F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				77A7BFE22688986C002F755F /* Repository */,
+				77A7BFE126889863002F755F /* Interactor */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		77A7BFE126889863002F755F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				77A7BFDF2688985F002F755F /* ListAdsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		77A7BFE22688986C002F755F /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				77A7BFE326889879002F755F /* ListAdsRepository.swift */,
+				77A7BFE52688989C002F755F /* ListAdsEndPoint.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		77B2674526878DA300B078B2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,9 +283,9 @@
 		77B269012688246C00B078B2 /* Advertisements */ = {
 			isa = PBXGroup;
 			children = (
+				77A7BFDE26889850002F755F /* Domain */,
+				77A7BFD926889845002F755F /* Presenter */,
 				77B26905268824C800B078B2 /* Entity */,
-				77B269042688248300B078B2 /* Presenter */,
-				77B269032688247C00B078B2 /* Domain */,
 				77B269022688247700B078B2 /* View */,
 			);
 			path = Advertisements;
@@ -262,20 +301,6 @@
 				6C2582C72626305600E30FDB /* AdsListViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		77B269032688247C00B078B2 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		77B269042688248300B078B2 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 		77B26905268824C800B078B2 /* Entity */ = {
@@ -467,11 +492,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77A7BFE426889879002F755F /* ListAdsRepository.swift in Sources */,
 				6C4BF0132628B98300B6752C /* AdListCardViewCell.swift in Sources */,
+				77A7BFE02688985F002F755F /* ListAdsInteractor.swift in Sources */,
 				6C58CC812625FF09001F7524 /* AppDelegate.swift in Sources */,
 				6C2582C82626305600E30FDB /* AdsListViewController.swift in Sources */,
 				6C58CCD226261245001F7524 /* Ad.swift in Sources */,
 				6C58CC832625FF09001F7524 /* SceneDelegate.swift in Sources */,
+				77A7BFE62688989C002F755F /* ListAdsEndPoint.swift in Sources */,
 				6C58CCBD26260262001F7524 /* AdListViewLayout.swift in Sources */,
 				6C4BF00E26277F8900B6752C /* InsetLabel.swift in Sources */,
 			);
