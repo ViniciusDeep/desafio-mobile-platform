@@ -25,5 +25,12 @@ end
 
 # Lane with responsible to keep testes running
 lane :tests do
-  run_tests(scheme: "desafio")
-end
+        sh "xcrun simctl create iphone-11-14-4 'iPhone 11' com.apple.CoreSimulator.SimRuntime.iOS-14-4"
+        scan(
+          devices: ["iphone-11-14-4"],
+          scheme: "desafio",
+          clean: true,
+          code_coverage: true,
+          only_testing: ["desafioTests"]
+        )
+  end
