@@ -12,7 +12,7 @@ protocol AdsListBussinessLogic {
     func fetch()
 }
 
-struct AdsListInteractor {
+final class AdsListInteractor {
     
     let repository: AdsListConfigurableRepository
     let presenter: AdsListPresentationLogic
@@ -30,9 +30,9 @@ extension AdsListInteractor: AdsListBussinessLogic {
         repository.fetchAds { (result) in
             switch result {
             case .failure(let error):
-                presenter.show(error: error)
+                self.presenter.show(error: error)
             case .success(let ads):
-                presenter.show(ads: ads)
+                self.presenter.show(ads: ads)
             }
         }
     }

@@ -14,7 +14,6 @@
 		6C58CC832625FF09001F7524 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C58CC822625FF09001F7524 /* SceneDelegate.swift */; };
 		6C58CC8A2625FF0C001F7524 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C58CC892625FF0C001F7524 /* Assets.xcassets */; };
 		6C58CC8D2625FF0C001F7524 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C58CC8B2625FF0C001F7524 /* LaunchScreen.storyboard */; };
-		6C58CC982625FF0D001F7524 /* desafioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C58CC972625FF0D001F7524 /* desafioTests.swift */; };
 		6C58CCA32625FF0D001F7524 /* desafioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C58CCA22625FF0D001F7524 /* desafioUITests.swift */; };
 		6C58CCD226261245001F7524 /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C58CCD126261245001F7524 /* Ad.swift */; };
 		77A7BFE02688985F002F755F /* ListAdsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A7BFDF2688985F002F755F /* ListAdsInteractor.swift */; };
@@ -102,7 +101,6 @@
 		6C58CC8C2625FF0C001F7524 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C58CC8E2625FF0C001F7524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C58CC932625FF0D001F7524 /* desafioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = desafioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C58CC972625FF0D001F7524 /* desafioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = desafioTests.swift; sourceTree = "<group>"; };
 		6C58CC992625FF0D001F7524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C58CC9E2625FF0D001F7524 /* desafioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = desafioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C58CCA22625FF0D001F7524 /* desafioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = desafioUITests.swift; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 				77B269102688254200B078B2 /* Resources */,
 				77B269002688244800B078B2 /* Settings */,
 				77B268FF2688243B00B078B2 /* Scenes */,
-				6C58CCB62625FFB4001F7524 /* UI */,
 			);
 			path = desafio;
 			sourceTree = "<group>";
@@ -187,7 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				77A7C0032688B7A8002F755F /* Scenes */,
-				6C58CC972625FF0D001F7524 /* desafioTests.swift */,
 				6C58CC992625FF0D001F7524 /* Info.plist */,
 			);
 			path = desafioTests;
@@ -200,13 +196,6 @@
 				6C58CCA42625FF0D001F7524 /* Info.plist */,
 			);
 			path = desafioUITests;
-			sourceTree = "<group>";
-		};
-		6C58CCB62625FFB4001F7524 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UI;
 			sourceTree = "<group>";
 		};
 		77A7BFDE26889850002F755F /* Domain */ = {
@@ -259,6 +248,23 @@
 				77A7C0092688B8B6002F755F /* Seeds.swift */,
 			);
 			path = Advertisements;
+			sourceTree = "<group>";
+		};
+		77A7C0152688C0A8002F755F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6C2582C72626305600E30FDB /* AdsListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		77A7C0162688C0B5002F755F /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				6C4BF0122628B98300B6752C /* AdListCardViewCell.swift */,
+				6C4BF01C2628BBAB00B6752C /* AdListCardViewCell.xib */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 		77B2674526878DA300B078B2 /* Products */ = {
@@ -318,9 +324,8 @@
 		77B269022688247700B078B2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6C4BF0122628B98300B6752C /* AdListCardViewCell.swift */,
-				6C4BF01C2628BBAB00B6752C /* AdListCardViewCell.xib */,
-				6C2582C72626305600E30FDB /* AdsListViewController.swift */,
+				77A7C0162688C0B5002F755F /* CustomView */,
+				77A7C0152688C0A8002F755F /* ViewController */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -532,7 +537,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				77A7C0082688B807002F755F /* AdsList.swift in Sources */,
-				6C58CC982625FF0D001F7524 /* desafioTests.swift in Sources */,
 				77A7C00A2688B8B6002F755F /* Seeds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
